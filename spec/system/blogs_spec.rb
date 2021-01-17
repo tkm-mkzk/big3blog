@@ -30,7 +30,7 @@ RSpec.describe "ブログ投稿", type: :system do
       check 'blog_target_site_chest'
       fill_in 'blog_content', with: @blog.content
       # 送信するとBlogモデルのカウントが1上がる
-      expect{
+      expect {
         find('input[name="commit"]').click
       }.to change { Blog.count }.by(1)
       # トップページに遷移する
@@ -83,7 +83,7 @@ RSpec.describe 'ブログ編集', type: :system do
       fill_in 'blog_title', with: "胸トレ"
       fill_in 'blog_content', with: "ベンチプレス85kg✕3"
       # 編集してもBlogモデルのカウントは変わらない
-      expect{
+      expect {
         find('input[name="commit"]').click
       }.to change { Blog.count }.by(0)
       # トップページに遷移する

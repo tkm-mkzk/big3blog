@@ -26,7 +26,7 @@ RSpec.describe "SquatWeightRecords", type: :system do
     # フォームに情報を入力する
     fill_in 'squat_weight_record_squat_weight', with: @squat_weight_record.squat_weight
     # 体重を記録すると、body_weighyモデルのカウントが1上がることを確認する
-    expect{
+    expect {
       find('input[name="commit"]').click
     }.to change { SquatWeightRecord.count }.by(1)
     # インデックスページにリダイレクトされることを確認する
