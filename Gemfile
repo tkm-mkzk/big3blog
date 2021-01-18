@@ -80,9 +80,7 @@ gem 'kaminari'
 gem "aws-sdk-s3", require: false
 
 # Unicornのインストール
-group :production, :staging do
-    gem 'unicorn'
-end
+gem 'unicorn'
 
 # 環境変数
 gem 'dotenv-rails'

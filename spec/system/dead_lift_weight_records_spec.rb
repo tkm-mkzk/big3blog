@@ -26,7 +26,7 @@ RSpec.describe "DeadLiftWeightRecords", type: :system do
     # フォームに情報を入力する
     fill_in 'dead_lift_weight_record_dead_lift_weight', with: @dead_lift_weight_record.dead_lift_weight
     # 体重を記録すると、body_weighyモデルのカウントが1上がることを確認する
-    expect{
+    expect {
       find('input[name="commit"]').click
     }.to change { DeadLiftWeightRecord.count }.by(1)
     # インデックスページにリダイレクトされることを確認する

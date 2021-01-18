@@ -26,7 +26,7 @@ RSpec.describe "BenchPressWeightRecords", type: :system do
     # フォームに情報を入力する
     fill_in 'bench_press_weight_record_bench_press_weight', with: @bench_press_weight_record.bench_press_weight
     # ベンチプレスを記録すると、body_weighyモデルのカウントが1上がることを確認する
-    expect{
+    expect {
       find('input[name="commit"]').click
     }.to change { BenchPressWeightRecord.count }.by(1)
     # インデックスページにリダイレクトされることを確認する
